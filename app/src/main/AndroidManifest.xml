@@ -11,6 +11,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BeSammenProjekt"
         tools:targetApi="31">
+
         <activity
             android:name=".FrontPageActivity"
             android:exported="false" />
@@ -18,13 +19,10 @@
             android:name=".ForgotPasswordActivity"
             android:exported="false" />
         <activity
-            android:name=".LoginFrontPageActivity"
-            android:exported="false" />
-        <activity
             android:name=".SignUpActivity"
             android:exported="false" />
         <activity
-            android:name=".LoginActivity"
+            android:name=".Main2Activity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

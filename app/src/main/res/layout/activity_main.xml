@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:name=".MainActivity" >
 
     <TextView
         android:id="@+id/tv_app_name"
@@ -38,6 +39,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Login"
+        android:onClick="Login"
         android:layout_below="@+id/et_password"
         android:layout_marginTop="20dp"
         android:layout_marginLeft="30dp"
@@ -48,6 +50,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Forgot Password?"
+        android:onClick="ForgotPassword"
         android:textSize="16sp"
         android:textColor="#FF0000"
         android:layout_below="@+id/btn_login"
@@ -69,6 +72,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Sign Up"
+        android:onClick="SignUp"
         android:layout_below="@+id/tv_or"
         android:layout_marginTop="20dp"
         android:layout_marginLeft="30dp"
