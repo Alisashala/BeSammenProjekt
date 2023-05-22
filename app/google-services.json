@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "881379687789",
+    "firebase_url": "https://besammen-default-rtdb.europe-west1.firebasedatabase.app",
     "project_id": "besammen",
     "storage_bucket": "besammen.appspot.com"
   },

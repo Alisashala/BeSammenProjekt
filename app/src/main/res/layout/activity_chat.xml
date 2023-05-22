@@ -14,13 +14,13 @@
         android:layout_height="0dp"
         android:layout_marginBottom="20dp"
         android:background="@drawable/background_content"
-        app:layout_constraintBottom_toTopOf="@id/sendLayount"
+        app:layout_constraintBottom_toTopOf="@id/sendButton"
         app:layout_constraintTop_toTopOf="parent"/>
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/backButton"
-        android:layout_width="40dp"
-        android:layout_height="30dp"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="12dp"
@@ -38,6 +38,11 @@
         app:layout_constraintStart_toStartOf="@id/viewBackground"
         app:layout_constraintTop_toTopOf="@id/viewBackground"/>
 
+    <ListView
+        android:id="@+id/lv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/chatRecycler"
@@ -52,32 +57,21 @@
         app:layout_constraintBottom_toBottomOf="@id/viewBackground"
         app:layout_constraintTop_toBottomOf="@id/backButton"/>
 
-    <FrameLayout
-        android:id="@+id/sendLayount"
-        android:layout_width="46dp"
-        android:layout_height="44dp"
+    <Button
+        android:id="@+id/sendButton"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="20dp"
         android:background="@drawable/chat_input_background"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+        app:layout_constraintEnd_toEndOf="parent"/>
 
-        <androidx.appcompat.widget.AppCompatImageView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginStart="4dp"
-            android:layout_marginLeft="4dp"
-            android:padding="10dp"
-            android:src="@drawable/send_icon"
-            app:tint="@color/white"/>
-
-
-    </FrameLayout>
 
     <EditText
         android:id="@+id/inputMessage"
-        android:layout_width="400dp"
-        android:layout_height="44dp"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
         android:layout_marginStart="16dp"
         android:layout_margin="20dp"
         android:layout_marginEnd="8dp"
@@ -92,7 +86,7 @@
         android:textColor="#F5F4F4"
         android:textColorHint="#D3D3D3"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/sendLayount"
+        app:layout_constraintEnd_toStartOf="@+id/sendButton"
         app:layout_constraintStart_toStartOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
