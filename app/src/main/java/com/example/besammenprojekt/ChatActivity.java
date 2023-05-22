@@ -27,7 +27,6 @@ public class ChatActivity extends AppCompatActivity {
 
     private ListView lv;
     private Button send;
-
     private EditText ed;
 
     @Override
