@@ -50,6 +50,7 @@ public class SignUpActivity extends AppCompatActivity {
         signUpBtn = findViewById(R.id.btn_signup);
         progressBar = findViewById(R.id.progressBar);
         textView = findViewById(R.id.loginNow);
+
         textView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

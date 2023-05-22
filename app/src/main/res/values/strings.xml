@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">BeSammenProjekt</string>
+    <string name="type">Type ...</string>
 </resources>

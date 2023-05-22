@@ -12,10 +12,6 @@
         android:theme="@style/Theme.BeSammenProjekt"
         tools:targetApi="31">
         <activity
-            android:name=".GroupChat"
-            android:exported="false" />
-        <activity
-            android:name=".PrivateChat"
             android:exported="false" />
         <activity
             android:name=".LoginActivity"
@@ -28,9 +24,6 @@
         </activity>
         <activity
             android:name=".MainActivity"
-            android:exported="false" />
-        <activity
-            android:name=".FrontPageActivity"
             android:exported="false" />
         <activity
             android:name=".SignUpActivity"
