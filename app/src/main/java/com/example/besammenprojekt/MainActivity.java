@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
         groupChat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intentToGroupChat = new Intent(view.getContext(), GroupChat.class);
+                Intent intentToGroupChat = new Intent(view.getContext(), ChatActivity.class);
                 startActivity(intentToGroupChat);
                 finish();
             }
