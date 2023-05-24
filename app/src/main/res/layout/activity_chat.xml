@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     android:animateLayoutChanges="true"
     tools:context=".ChatActivity"
+    android:id="@+id/root_view"
     android:background="#9DBA87">
 
     <View
@@ -56,38 +57,25 @@
         app:layout_constraintBottom_toBottomOf="@id/viewBackground"
         app:layout_constraintTop_toBottomOf="@id/backButton"/>
 
+
     <Button
         android:id="@+id/sendButton"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginEnd="20dp"
         android:layout_marginBottom="20dp"
         android:background="@drawable/send_icon"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintEnd_toEndOf="parent" />
 
-
-    <Button
-        android:id="@+id/emojiButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="77dp"
-        android:text="😀"
-        app:layout_constraintBottom_toTopOf="@+id/viewBackground"
-        app:layout_constraintEnd_toStartOf="@+id/viewBackground"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.763" />
 
     <EditText
         android:id="@+id/inputMessage"
-        android:layout_width="300dp"
+        android:layout_width="270dp"
         android:layout_height="50dp"
-        android:layout_marginStart="16dp"
         android:layout_margin="20dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="12dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="20dp"
         android:background="@drawable/chat_input_background"
         android:hint="@string/type"
         android:imeOptions="actionDone"
@@ -99,6 +87,38 @@
         android:textColorHint="#D3D3D3"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/sendButton"
-        app:layout_constraintStart_toStartOf="parent"/>
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+
+    <nl.dionsegijn.konfetti.xml.KonfettiView
+        android:id="@+id/confettiView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="51dp"
+        android:layout_height="37dp"
+        android:background="#8BC34A"
+        android:backgroundTint="#88D332"
+        android:onClick="showConfetti"
+        android:text="😊"
+        android:textColorHighlight="#FF0028"
+        android:textColorLink="#D6C6C6"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/konfettiView"
+        app:layout_constraintHorizontal_bias="0.032"
+        app:layout_constraintStart_toStartOf="@+id/confettiView"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.954"
+        app:strokeColor="#1B2C8A" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

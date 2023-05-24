@@ -21,14 +21,28 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.concurrent.TimeUnit;
+
+import nl.dionsegijn.konfetti.core.Party;
+import nl.dionsegijn.konfetti.core.PartyFactory;
+import nl.dionsegijn.konfetti.core.Position;
+import nl.dionsegijn.konfetti.core.emitter.Emitter;
+import nl.dionsegijn.konfetti.core.emitter.EmitterConfig;
+import nl.dionsegijn.konfetti.core.models.Shape;
+import nl.dionsegijn.konfetti.xml.KonfettiView;
 
 public class ChatActivity extends AppCompatActivity {
 
     private ListView lv;
     private Button send;
     private EditText ed;
+
+    private KonfettiView confettiView = null;
+    private Shape.DrawableShape drawableShape = null;
+    private Party party = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +54,10 @@ public class ChatActivity extends AppCompatActivity {
         lv = findViewById(R.id.lv);
         ed = findViewById(R.id.inputMessage);
 
+        confettiView = findViewById(R.id.confettiView);
+
+
+
         db.getReference("Messages").addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
@@ -48,6 +66,9 @@ public class ChatActivity extends AppCompatActivity {
                 ArrayAdapter adapter = new ArrayAdapter(ChatActivity.this, android.R.layout.simple_list_item_1, al);
                 lv.setAdapter(adapter);
             }
+
+
+
 
             @Override
             public void onChildChanged(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
@@ -78,5 +99,21 @@ public class ChatActivity extends AppCompatActivity {
             }
         });
 
+
+
     }
+
+    public void showConfetti(View view) {
+
+            EmitterConfig emitterConfig = new Emitter(350, TimeUnit.MILLISECONDS).perSecond(1000);
+            party = new PartyFactory(emitterConfig)
+                    .spread(700)
+                    .colors(Arrays.asList(0xff3660, 0x4D7429, 0xB18F6A, 0x1790d0, 0xffffba, 0xbaffc9))
+                    .setSpeedBetween(0f, 30f)
+                    .position(new Position.Relative(0.5, 0.3))
+                    .build();
+
+            confettiView.start(party);
+        }
+
 }
