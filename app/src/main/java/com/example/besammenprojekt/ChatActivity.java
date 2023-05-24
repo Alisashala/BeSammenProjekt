@@ -3,6 +3,7 @@ package com.example.besammenprojekt;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.EmojiCompatConfigurationView;
 
 import android.os.Bundle;
 import android.provider.CalendarContract;
@@ -39,6 +40,7 @@ public class ChatActivity extends AppCompatActivity {
         ArrayList al = new ArrayList();
         lv = findViewById(R.id.lv);
         ed = findViewById(R.id.inputMessage);
+
         db.getReference("Messages").addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {

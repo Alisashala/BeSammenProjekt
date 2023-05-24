@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:name=".SignUpActivity" >
@@ -15,6 +17,7 @@
         android:layout_marginTop="60dp"
         android:layout_centerHorizontal="true" />
 
+
     <EditText
         android:id="@+id/et_email"
         android:layout_width="match_parent"
@@ -29,22 +32,34 @@
         android:layout_marginRight="30dp"/>
 
 
-
     <EditText
         android:id="@+id/et_password"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Password"
-        android:padding="15dp"
-        android:paddingStart="25dp"
-        android:background="@drawable/login_colors"
-        android:inputType="textPassword"
         android:layout_below="@+id/et_email"
-        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true"
         android:layout_marginLeft="30dp"
-        android:layout_marginRight="30dp"/>
+        android:layout_marginTop="4dp"
+        android:layout_marginRight="30dp"
+        android:background="@drawable/login_colors"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:padding="15dp"
+        android:paddingStart="25dp" />
 
-
+    <EditText
+        android:id="@+id/et_userName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/et_email"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="57dp"
+        android:layout_marginRight="30dp"
+        android:background="@drawable/login_colors"
+        android:hint="Name"
+        android:inputType="textPersonName"
+        android:padding="15dp"
+        android:paddingStart="25dp" />
 
     <ProgressBar
         android:id="@+id/progressBar"
@@ -78,5 +93,6 @@
         android:text="Click to login "
         android:textSize="17sp"
         android:textStyle="bold" />
+
 
 </RelativeLayout>

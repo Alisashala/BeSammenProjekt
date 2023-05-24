@@ -32,10 +32,10 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentBottom="true"
         android:layout_centerInParent="true"
-        android:onClick="privateChat"
         android:layout_marginStart="154dp"
         android:layout_marginTop="50dp"
         android:layout_marginBottom="330dp"
+        android:onClick="privateChat"
         app:srcCompat="@drawable/chatting" />
 
     <ImageView

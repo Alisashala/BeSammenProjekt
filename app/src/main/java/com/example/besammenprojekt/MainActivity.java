@@ -26,6 +26,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        Intent intentToMain = getIntent();
+        String message = intentToMain.getStringExtra("key");
+        TextView username = findViewById(R.id.userInfo);
+        username.setText(message);
+
         auth = FirebaseAuth.getInstance();
         logOut = findViewById(R.id.logOut);
         textView = findViewById(R.id.userInfo);
@@ -36,14 +41,14 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
             finish();
         } else {
-            textView.setText(user.getEmail());
+            username.setText(message);
         }
 
         privateChat = findViewById(R.id.privateChat);
         privateChat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intentToPrivateChat = new Intent(view.getContext(), PrivateChat.class);
+                Intent intentToPrivateChat = new Intent(view.getContext(), UserActivity.class);
                 startActivity(intentToPrivateChat);
                 finish();
             }
@@ -53,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
         groupChat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intentToGroupChat = new Intent(view.getContext(), ChatActivity.class);
+                Intent intentToGroupChat = new Intent(view.getContext(), AgeActivity.class);
                 startActivity(intentToGroupChat);
                 finish();
             }

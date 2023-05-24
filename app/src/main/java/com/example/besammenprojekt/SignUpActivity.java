@@ -24,6 +24,7 @@ public class SignUpActivity extends AppCompatActivity {
     private EditText editEmail;
     private EditText editPassword;
     private Button signUpBtn;
+    public EditText userName;
     private FirebaseAuth mAuth;
     private ProgressBar progressBar;
     private TextView textView;
@@ -44,6 +45,7 @@ public class SignUpActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
+
         mAuth = FirebaseAuth.getInstance();
         editEmail = findViewById(R.id.et_email);
         editPassword = findViewById(R.id.et_password);
@@ -60,6 +62,7 @@ public class SignUpActivity extends AppCompatActivity {
             }
         });
 
+
         signUpBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -74,7 +77,7 @@ public class SignUpActivity extends AppCompatActivity {
                     return;
                 }
                 if (TextUtils.isEmpty(password)){
-                    Toast.makeText(SignUpActivity.this, "Enter email", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(SignUpActivity.this, "Enter password", Toast.LENGTH_SHORT).show();
                     return;
                 }
 
@@ -86,7 +89,10 @@ public class SignUpActivity extends AppCompatActivity {
                                 if (task.isSuccessful()) {
                                     Toast.makeText(SignUpActivity.this, "Account created",
                                             Toast.LENGTH_SHORT).show();
-                                    Intent intentToMain = new Intent(getApplicationContext(), MainActivity.class);
+                                    userName = findViewById(R.id.et_userName);
+                                    String message = userName.getText().toString(); // Get the string value entered by the user
+                                    Intent intentToMain = new Intent(SignUpActivity.this, MainActivity.class);
+                                    intentToMain.putExtra("key", message);
                                     startActivity(intentToMain);
                                 } else {
                                     // If sign in fails, display a message to the user.
