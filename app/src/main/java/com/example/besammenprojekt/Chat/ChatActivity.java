@@ -5,6 +5,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +13,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -48,6 +50,9 @@ public class ChatActivity extends AppCompatActivity {
 
     private Shape.DrawableShape drawableShape = null;
     private Party party = null;
+    private ProgressBar progressBar;
+    private Handler handler;
+    private Runnable runnable;
 
 
     @Override
@@ -60,6 +65,22 @@ public class ChatActivity extends AppCompatActivity {
         lv = findViewById(R.id.lv);
         ed = findViewById(R.id.inputMessage);
         confettiView = findViewById(R.id.confettiView);
+
+        progressBar = findViewById(R.id.progressBar);
+        // Initialize the Handler
+        handler = new Handler();
+
+        // Create a Runnable to hide the progress bar
+        runnable = new Runnable() {
+            @Override
+            public void run() {
+                progressBar.setVisibility(View.GONE);
+            }
+        };
+        // Show the progress bar
+        progressBar.setVisibility(View.VISIBLE);
+        // Schedule the runnable to hide the progress bar after 7 seconds
+        handler.postDelayed(runnable, 3000);
 
 
 
