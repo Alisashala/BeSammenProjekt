@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import com.example.besammenprojekt.MainActivity;
 import com.example.besammenprojekt.R;
 import com.example.besammenprojekt.Chat.ChatActivity;
 
@@ -23,11 +24,14 @@ public class AgeActivity extends AppCompatActivity {
         finish();
     }
 
+        public void backButton(View view) {
+            Intent intentToMainActivity = new Intent(getApplicationContext(), MainActivity.class);
+            startActivity(intentToMainActivity);
+            finish();
 
-    public void backButton(View view) {
-        Intent intentToMainActivity = new Intent(getApplicationContext(), MainActivity.class);
-        startActivity(intentToMainActivity);
-        finish();
+        }
 
     }
-}
+
+
+
