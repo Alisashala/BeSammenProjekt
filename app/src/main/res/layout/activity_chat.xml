@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:animateLayoutChanges="true"
-    tools:context=".ChatActivity"
+    tools:context=".Chat.ChatActivity"
     android:id="@+id/root_view"
     android:background="#9DBA87">
 
@@ -126,7 +126,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/information"
         tools:layout_editor_absoluteX="356dp"
-        android:onClick="showConfetti"/>
+        />
 
     <ImageView
         android:id="@+id/confettiView2"

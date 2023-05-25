@@ -1,13 +1,10 @@
-package com.example.besammenprojekt;
+package com.example.besammenprojekt.Chat;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.EmojiCompatConfigurationView;
 
-import android.graphics.Color;
 import android.os.Bundle;
-import android.provider.CalendarContract;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,8 +15,9 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.besammenprojekt.R;
+import com.example.besammenprojekt.User.UserActivity;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -46,7 +44,6 @@ public class ChatActivity extends AppCompatActivity {
     private Button send;
     private FirebaseAuth mAuth;
     private EditText ed;
-    private List<UserActivity.Users> userList = new ArrayList<>();
     private KonfettiView confettiView = null;
 
     private Shape.DrawableShape drawableShape = null;
