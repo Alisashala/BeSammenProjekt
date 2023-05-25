@@ -89,9 +89,9 @@ public class MainActivity extends AppCompatActivity {
         rulesAndInformation.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-            Intent intentToRulesAndInformation = new Intent(getApplicationContext(), RulesAndInformation.class);
-            startActivity(intentToRulesAndInformation);
-            finish();
+                Intent intentToRulesAndInformation = new Intent(getApplicationContext(), RulesAndInformation.class);
+                startActivity(intentToRulesAndInformation);
+                finish();
             }
         });
 
