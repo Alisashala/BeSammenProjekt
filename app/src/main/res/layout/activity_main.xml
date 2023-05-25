@@ -6,6 +6,29 @@
     android:layout_height="match_parent"
     android:background="#F5F4F4">
 
+    <View
+        android:id="@+id/viewBackground2"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/background_content"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/welcomeText"
+        android:layout_width="241dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:fontFamily="sans-serif-light"
+        android:text="Welcome"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="40sp"
+        android:textStyle="italic" />
+
     <TextView
         android:id="@+id/userInfo"
         android:layout_width="153dp"
@@ -18,59 +41,55 @@
         android:textSize="28sp" />
 
     <ImageView
+        android:id="@+id/groupChat"
+        android:layout_width="95dp"
+        android:layout_height="100dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="172dp"
+        android:contentDescription="Profile Button"
+        android:onClick="groupChat"
+        app:srcCompat="@drawable/group__1_" />
+
+    <ImageView
         android:id="@+id/privateChat"
-        android:layout_width="150dp"
+        android:layout_width="95dp"
         android:layout_height="100dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_centerInParent="true"
         android:layout_marginStart="158dp"
-        android:layout_marginEnd="157dp"
+        android:layout_marginEnd="141dp"
         android:layout_marginBottom="340dp"
         android:contentDescription="Profile Button"
         android:onClick="privateChat"
         app:srcCompat="@drawable/chatting" />
 
     <ImageView
-        android:id="@+id/groupChat"
+        android:id="@+id/rulesAndInformation"
         android:layout_width="95dp"
-        android:layout_height="96dp"
-        android:layout_alignParentTop="true"
+        android:layout_height="100dp"
+        android:layout_above="@+id/bottomBar"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="184dp"
-        android:contentDescription="Profile Button"
-        android:onClick="groupChat"
-        app:srcCompat="@drawable/group__1_" />
-
-    <View
-        android:id="@+id/viewBackground2"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_marginBottom="20dp"
-        android:background="@drawable/background_content"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/backButton"
-        android:layout_width="62dp"
-        android:layout_height="65dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="10dp"
-        android:padding="5dp"
-        android:src="@drawable/back_icon"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginStart="153dp"
+        android:layout_marginTop="200dp"
+        android:layout_marginEnd="142dp"
+        android:layout_marginBottom="79dp"
+        android:contentDescription="rules and information button"
+        android:onClick="rulesAndInformation"
+        app:srcCompat="@drawable/yellow_card" />
 
 
     <LinearLayout
         android:id="@+id/bottomBar"
         android:layout_width="match_parent"
-        android:layout_height="70dp"
+        android:layout_height="72dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="2dp"
-        android:layout_marginBottom="1dp"
+        android:layout_marginStart="-3dp"
+        android:layout_marginBottom="-4dp"
         android:background="#9DBA87"
         android:gravity="center"
         android:orientation="horizontal">
@@ -82,9 +101,9 @@
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
             android:layout_weight="1"
+            android:contentDescription="Sign out Button"
             android:onClick="signOutButton"
-            app:srcCompat="@drawable/off_button"
-            android:contentDescription="Sign out Button" />
+            app:srcCompat="@drawable/off_button" />
 
         <ImageView
             android:id="@+id/profileButton"
@@ -93,40 +112,8 @@
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
             android:layout_weight="1"
-            android:onClick="profileButton"
-            app:srcCompat="@drawable/user"
-            android:contentDescription="Profile Button" />
+            app:srcCompat="@drawable/user" />
+
     </LinearLayout>
-
-    <ImageView
-        android:id="@+id/rulesAndInformation"
-        android:layout_width="150dp"
-        android:layout_height="100dp"
-        android:layout_above="@+id/bottomBar"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginStart="161dp"
-        android:layout_marginTop="200dp"
-        android:layout_marginEnd="154dp"
-        android:layout_marginBottom="97dp"
-        android:contentDescription="rules and information button"
-        android:onClick="rulesAndInformation"
-        app:srcCompat="@drawable/yellow_card" />
-
-    <TextView
-        android:id="@+id/welcomeText"
-        android:layout_width="241dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="22dp"
-        android:fontFamily="sans-serif-light"
-        android:text="Welcome"
-        android:textAlignment="center"
-        android:textColor="@color/black"
-        android:textSize="40sp"
-        android:textStyle="italic" />
-
 
 </RelativeLayout>
