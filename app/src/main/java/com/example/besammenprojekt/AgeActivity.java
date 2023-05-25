@@ -15,8 +15,16 @@ public class AgeActivity extends AppCompatActivity {
     }
 
     public void firstChat (View v) {
-        Intent toFirstChat = new Intent(AgeActivity.this, ChatActivity.class);
-        startActivity(toFirstChat);
+        Intent intentToFirstChat = new Intent(AgeActivity.this, ChatActivity.class);
+        startActivity(intentToFirstChat);
+        finish();
     }
 
+
+    public void backButton(View view) {
+        Intent intentToMainActivity = new Intent(getApplicationContext(), MainActivity.class);
+        startActivity(intentToMainActivity);
+        finish();
+
+    }
 }
