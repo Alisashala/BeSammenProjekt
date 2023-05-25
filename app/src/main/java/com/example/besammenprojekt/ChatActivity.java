@@ -5,6 +5,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.EmojiCompatConfigurationView;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.provider.CalendarContract;
 import android.view.View;
@@ -62,7 +63,9 @@ public class ChatActivity extends AppCompatActivity {
             @Override
             public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
                 Toast.makeText(ChatActivity.this, "Message added"+snapshot.getValue().toString(), Toast.LENGTH_SHORT).show();
-                al.add(snapshot.getValue().toString());
+                //al.add(snapshot.getValue().toString());
+                al.add("Nicklas");
+                lv.setBackgroundColor(Color.BLACK);
                 ArrayAdapter adapter = new ArrayAdapter(ChatActivity.this, android.R.layout.simple_list_item_1, al);
                 lv.setAdapter(adapter);
             }

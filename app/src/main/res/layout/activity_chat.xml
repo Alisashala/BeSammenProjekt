@@ -57,8 +57,6 @@
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintBottom_toBottomOf="@id/viewBackground"
         app:layout_constraintTop_toBottomOf="@id/backButton"/>
-
-
     <Button
         android:id="@+id/sendButton"
         android:layout_width="50dp"
@@ -90,8 +88,6 @@
         app:layout_constraintEnd_toStartOf="@+id/sendButton"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent" />
-
-
 
     <nl.dionsegijn.konfetti.xml.KonfettiView
         android:id="@+id/confettiView"
