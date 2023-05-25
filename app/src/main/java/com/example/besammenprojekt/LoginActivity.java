@@ -21,8 +21,13 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+//AppCompatActivity-klassen er en del af Android Support-biblioteket.
+//extends: klassen udvider eller arver funktionaliteten fra en anden klasse.
+//Det betyder, at LoginActivity vil arve alle de ikke-private egenskaber,
+// metoder og andre medlemmer fra AppCompatActivity.
 
 public class LoginActivity extends AppCompatActivity {
+    //definerer private variabler af forskellige typer, der bruges til at håndtere brugerens loginfunktion
 
     private EditText editEmail;
     private EditText editPassword;
@@ -47,7 +52,7 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-
+        // Initialiserer og forbinder forskellige variabler med de tilsvarende elementer
         mAuth = FirebaseAuth.getInstance();
         editEmail = findViewById(R.id.et_email);
         editPassword = findViewById(R.id.et_password);
@@ -55,6 +60,9 @@ public class LoginActivity extends AppCompatActivity {
         progressBar = findViewById(R.id.progressBar);
         textView = findViewById(R.id.signUpNow);
         textView.setOnClickListener(new View.OnClickListener() {
+
+            //Når brugeren klikker på det View-objekt, der er knyttet til
+            //Denne OnClickListener, vil der blive oprettet en Intent til at starte SignUpActivity,
             @Override
             public void onClick(View v) {
                 Intent intentToSignUp = new Intent(LoginActivity.this, SignUpActivity.class);
@@ -65,12 +73,14 @@ public class LoginActivity extends AppCompatActivity {
 
         loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(View v) { //sætter View som parameter og v returnere ingen værdi
+                //Synligheden af en progressBar-komponent til at være synlig
+                //ved at kalde setVisibility(View.VISIBLE) på progressBar-objektet.
                 progressBar.setVisibility(View.VISIBLE);
                 String email;
                 String password;
                 email = editEmail.getText().toString();
-                password = editPassword.getText().toString();
+                password = editPassword.getText().toString(); //convert to string.
 
                 if (TextUtils.isEmpty(email)){
                     Toast.makeText(LoginActivity.this, "Enter email", Toast.LENGTH_SHORT).show();

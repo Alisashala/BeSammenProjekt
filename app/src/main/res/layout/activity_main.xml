@@ -1,55 +1,119 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:name=".MainActivity"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:name=".MainActivity" >
+    android:background="#F5F4F4">
+
+    <View
+        android:id="@+id/viewBackground2"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/background_content"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/welcomeText"
+        android:layout_width="241dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:fontFamily="sans-serif-light"
+        android:text="Welcome"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="40sp"
+        android:textStyle="italic" />
 
     <TextView
         android:id="@+id/userInfo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="153dp"
+        android:layout_height="53dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="80dp"
         android:text="User"
-        android:textSize="24sp"
-        android:layout_marginTop="40dp"
-        android:layout_centerHorizontal="true" />
+        android:textAlignment="center"
+        android:textColor="#9DBA87"
+        android:textSize="28sp" />
 
-    <Button
-        android:id="@+id/logOut"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
+    <ImageView
+        android:id="@+id/groupChat"
+        android:layout_width="95dp"
+        android:layout_height="100dp"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="646dp"
-        android:text="Log out" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="172dp"
+        android:contentDescription="Profile Button"
+        android:onClick="groupChat"
+        app:srcCompat="@drawable/group__1_" />
 
     <ImageView
         android:id="@+id/privateChat"
-        android:layout_width="103dp"
-        android:layout_height="90dp"
-        android:layout_below="@+id/groupChat"
+        android:layout_width="95dp"
+        android:layout_height="100dp"
         android:layout_alignParentStart="true"
-        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
         android:layout_centerInParent="true"
-        android:layout_marginStart="154dp"
-        android:layout_marginTop="50dp"
-        android:layout_marginBottom="330dp"
+        android:layout_marginStart="158dp"
+        android:layout_marginEnd="141dp"
+        android:layout_marginBottom="340dp"
+        android:contentDescription="Profile Button"
         android:onClick="privateChat"
         app:srcCompat="@drawable/chatting" />
 
     <ImageView
-        android:id="@+id/groupChat"
-        android:layout_width="103dp"
-        android:layout_height="90dp"
+        android:id="@+id/rulesAndInformation"
+        android:layout_width="95dp"
+        android:layout_height="100dp"
+        android:layout_above="@+id/bottomBar"
         android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:onClick="groupChat"
-        android:layout_marginStart="155dp"
-        android:layout_marginTop="170dp"
-        android:layout_marginEnd="154dp"
-        app:srcCompat="@drawable/group__1_" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="153dp"
+        android:layout_marginTop="200dp"
+        android:layout_marginEnd="142dp"
+        android:layout_marginBottom="79dp"
+        android:contentDescription="rules and information button"
+        android:onClick="rulesAndInformation"
+        app:srcCompat="@drawable/yellow_card" />
 
+
+    <LinearLayout
+        android:id="@+id/bottomBar"
+        android:layout_width="match_parent"
+        android:layout_height="72dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="-3dp"
+        android:layout_marginBottom="-4dp"
+        android:background="#9DBA87"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/signOutButton"
+            android:layout_width="1dp"
+            android:layout_height="50dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_weight="1"
+            android:contentDescription="Sign out Button"
+            android:onClick="signOutButton"
+            app:srcCompat="@drawable/off_button" />
+
+        <ImageView
+            android:id="@+id/profileButton"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/user" />
+
+    </LinearLayout>
 
 </RelativeLayout>
