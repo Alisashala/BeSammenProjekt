@@ -63,7 +63,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
         ImageView signOutButton = findViewById(R.id.signOutButton);
         signOutButton.setOnClickListener(new View.OnClickListener() {
             @Override

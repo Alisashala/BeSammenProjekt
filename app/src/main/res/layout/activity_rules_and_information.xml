@@ -12,10 +12,10 @@
         android:layout_width="47dp"
         android:layout_height="64dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="32dp"
+        android:onClick="backButtonInRules"
         android:padding="5dp"
         android:src="@drawable/back_icon"
-        android:onClick="backButtonInRules"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -23,14 +23,14 @@
         android:id="@+id/headerText"
         android:layout_width="253dp"
         android:layout_height="95dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="16dp"
         android:text="Rules and Information"
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="40sp"
         android:textStyle="italic"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.218"
+        app:layout_constraintHorizontal_bias="0.168"
         app:layout_constraintStart_toEndOf="@+id/backButtonInRules"
         app:layout_constraintTop_toTopOf="parent" />
 
