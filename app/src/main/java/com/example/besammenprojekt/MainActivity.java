@@ -1,5 +1,6 @@
 package com.example.besammenprojekt;
 import android.content.Intent;
+import android.media.Image;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -32,7 +33,6 @@ public class MainActivity extends AppCompatActivity {
         username.setText(message);
 
         auth = FirebaseAuth.getInstance();
-        logOut = findViewById(R.id.logOut);
         textView = findViewById(R.id.userInfo);
         user = auth.getCurrentUser();
 
@@ -64,15 +64,16 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        logOut.setOnClickListener(new View.OnClickListener() {
+
+        ImageView signOutButton = findViewById(R.id.signOutButton);
+        signOutButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(View view) {
                 FirebaseAuth.getInstance().signOut();
-                Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
-                startActivity(intent);
+                Intent intentToLoginActivity = new Intent(getApplicationContext(), LoginActivity.class);
+                startActivity(intentToLoginActivity);
                 finish();
 
             }
         });
-    }
-}
+
