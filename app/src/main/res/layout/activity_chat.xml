@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:animateLayoutChanges="true"
-    tools:context=".ChatActivity"
+    tools:context=".Chat.ChatActivity"
     android:id="@+id/root_view"
     android:background="#9DBA87">
 
@@ -17,6 +17,17 @@
         android:background="@drawable/background_content"
         app:layout_constraintBottom_toTopOf="@id/sendButton"
         app:layout_constraintTop_toTopOf="parent"/>
+
+
+    <ListView
+        android:id="@+id/lv"
+        android:layout_width="354dp"
+        android:layout_height="512dp"
+        app:layout_constraintBottom_toTopOf="@+id/inputMessage"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/viewBackground"
+        tools:ignore="MissingConstraints" />
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/backButton"
@@ -30,6 +41,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+
     <ProgressBar
         android:id="@+id/progressBar"
         android:layout_width="40dp"
@@ -39,17 +51,12 @@
         app:layout_constraintStart_toStartOf="@id/viewBackground"
         app:layout_constraintTop_toTopOf="@id/viewBackground"/>
 
-    <ListView
-        android:id="@+id/lv"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        tools:ignore="MissingConstraints" />
-
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/chatRecycler"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:clipToPadding="false"
+        android:layout_marginBottom="40dp"
         android:orientation="vertical"
         android:overScrollMode="never"
         android:visibility="gone"
@@ -66,6 +73,12 @@
         android:background="@drawable/send_icon"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/editListView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="10dp"/>
 
 
     <EditText
@@ -100,22 +113,34 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="51dp"
-        android:layout_height="37dp"
-        android:background="#8BC34A"
-        android:backgroundTint="#88D332"
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="40dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:padding="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/information"
+        tools:layout_editor_absoluteX="356dp"
+        />
+
+    <ImageView
+        android:id="@+id/confettiView2"
+        android:layout_width="67dp"
+        android:layout_height="55dp"
+        android:layout_marginBottom="10dp"
+        android:contentDescription="confetti view"
         android:onClick="showConfetti"
-        android:text="😊"
-        android:textColorHighlight="#FF0028"
-        android:textColorLink="#D6C6C6"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/confettiView"
-        app:layout_constraintHorizontal_bias="0.032"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/confettiView"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.954"
-        app:strokeColor="#1B2C8A" />
+        app:layout_constraintTop_toBottomOf="@+id/viewBackground"
+        app:layout_constraintVertical_bias="0.6"
+        app:srcCompat="@drawable/confetti" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,10 +1,13 @@
-package com.example.besammenprojekt;
+package com.example.besammenprojekt.User;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+
+import com.example.besammenprojekt.R;
+import com.example.besammenprojekt.Chat.ChatActivity;
 
 public class AgeActivity extends AppCompatActivity {
 

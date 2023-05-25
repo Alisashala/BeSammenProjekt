@@ -1,4 +1,4 @@
-package com.example.besammenprojekt;
+package com.example.besammenprojekt.Details;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,6 +6,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
+
+import com.example.besammenprojekt.MainActivity;
+import com.example.besammenprojekt.R;
 
 import org.w3c.dom.Text;
 

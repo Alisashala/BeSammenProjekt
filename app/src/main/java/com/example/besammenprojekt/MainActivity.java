@@ -1,6 +1,5 @@
 package com.example.besammenprojekt;
 import android.content.Intent;
-import android.media.Image;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -9,6 +8,10 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.besammenprojekt.Details.RulesAndInformation;
+import com.example.besammenprojekt.Onboarding.LoginActivity;
+import com.example.besammenprojekt.User.AgeActivity;
+import com.example.besammenprojekt.User.UserActivity;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 

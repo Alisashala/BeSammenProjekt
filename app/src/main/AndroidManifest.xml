@@ -12,13 +12,13 @@
         android:theme="@style/Theme.BeSammenProjekt"
         tools:targetApi="31">
         <activity
-            android:name=".RulesAndInformation"
+            android:name=".Details.RulesAndInformation"
             android:exported="false" />
         <activity
-            android:name=".UserActivity"
+            android:name=".User.UserActivity"
             android:exported="false" />
         <activity
-            android:name=".LoginActivity"
+            android:name=".Onboarding.LoginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -29,11 +29,11 @@
         <activity
             android:name=".MainActivity"
             android:exported="false" />
-        <activity android:name=".AgeActivity" />
+        <activity android:name=".User.AgeActivity" />
         <activity
-            android:name=".SignUpActivity"
+            android:name=".Onboarding.SignUpActivity"
             android:exported="false" />
-        <activity android:name=".ChatActivity" />
+        <activity android:name=".Chat.ChatActivity" />
     </application>
 
 </manifest>
