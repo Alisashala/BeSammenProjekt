@@ -16,6 +16,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 public class MainActivity extends AppCompatActivity {
+
     private FirebaseAuth auth;
     private TextView textView;
     private FirebaseUser user;
@@ -66,6 +67,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+
         ImageView signOutButton = findViewById(R.id.signOutButton);
         signOutButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -75,6 +77,13 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intentToLoginActivity);
                 finish();
 
+            }
+        });
+        ImageView profileButton = findViewById(R.id.profileButton);
+        profileButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // intent til profiloplysninger
             }
         });
 
@@ -87,7 +96,6 @@ public class MainActivity extends AppCompatActivity {
                 finish();
             }
         });
-
 
     }
 }

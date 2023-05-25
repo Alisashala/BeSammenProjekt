@@ -6,15 +6,31 @@
     android:layout_height="match_parent"
     tools:context=".User.AgeActivity">
 
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/backButton"
+        android:layout_width="47dp"
+        android:layout_height="64dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:onClick="backButton"
+        android:padding="5dp"
+        android:src="@drawable/back_icon"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:id="@+id/textAge1"
-        android:layout_width="314dp"
-        android:layout_height="98dp"
-        android:layout_marginTop="50dp"
+        android:layout_width="257dp"
+        android:layout_height="125dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="sans-serif-light"
         android:gravity="center"
-        android:text="This app was designed for you, to be able to chat with people your age"
+        android:text="Chat with individuals your age and make meaningful connections."
+        android:textAllCaps="false"
+        android:textColor="#000000"
         android:textSize="24sp"
-        android:textStyle="bold"
+        android:textStyle="italic"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -24,82 +40,73 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
+        android:fontFamily="sans-serif-light"
         android:gravity="center"
         android:text="Please Select Your Age"
+        android:textColor="#9CB986"
         android:textSize="19sp"
-
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textAge1" />
 
     <LinearLayout
-        android:layout_width="409dp"
-        android:layout_height="535dp"
-        android:layout_marginStart="1dp"
+        android:layout_width="414dp"
+        android:layout_height="503dp"
         android:layout_marginTop="40dp"
-        android:layout_marginEnd="1dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewSelect">
+        app:layout_constraintTop_toBottomOf="@+id/textViewSelect"
+        app:layout_constraintVertical_bias="1.0">
 
         <TextView
             android:id="@+id/textView"
-            android:layout_width="100dp"
-            android:background="@drawable/background_age"
-            android:layout_marginBottom="10dp"
-            android:layout_height="100dp"
-            android:text="25-30"
+            android:layout_width="133dp"
+            android:layout_height="130dp"
+            android:layout_gravity="center"
+            android:background="@drawable/age_select_color"
+            android:clickable="true"
+            android:gravity="center"
             android:onClick="firstChat"
+            android:text="20s"
             android:textColor="@color/black"
             android:textSize="30sp"
-            android:gravity="center"
-            android:textStyle="bold"
-            android:layout_gravity="center"/>
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/textView2"
-            android:layout_width="100dp"
-            android:layout_marginBottom="10dp"
-            android:layout_height="100dp"
-            android:text="30-35"
+            android:layout_width="133dp"
+            android:layout_height="130dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/age_select_color"
+            android:clickable="true"
+            android:gravity="center"
             android:onClick="secondChat"
+            android:text="30s"
             android:textColor="@color/black"
             android:textSize="30sp"
-            android:gravity="center"
-            android:textStyle="bold"
-            android:background="@drawable/background_age"
-            android:layout_gravity="center"/>
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/textView3"
-            android:layout_width="100dp"
-            android:background="@drawable/background_age"
-            android:layout_marginBottom="10dp"
-            android:layout_height="100dp"
-            android:text="35-40"
+            android:layout_width="133dp"
+            android:layout_height="130dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/age_select_color"
+            android:clickable="true"
+            android:gravity="center"
             android:onClick="thirdChat"
-            android:textSize="30sp"
-            android:gravity="center"
-            android:textStyle="bold"
+            android:text="40s"
             android:textColor="@color/black"
-            android:layout_gravity="center"/>
+            android:textSize="30sp"
+            android:textStyle="bold" />
 
-        <TextView
-            android:id="@+id/textView4"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:text="40+"
-            android:onClick="fourthChat"
-            android:textSize="30sp"
-            android:gravity="center"
-            android:textStyle="bold"
-            android:textColor="@color/black"
-            android:background="@drawable/background_age"
-            android:layout_gravity="center"/>
+
 
     </LinearLayout>
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>
