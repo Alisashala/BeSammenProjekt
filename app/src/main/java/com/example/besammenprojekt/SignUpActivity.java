@@ -62,7 +62,6 @@ public class SignUpActivity extends AppCompatActivity {
             }
         });
 
-
         signUpBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -94,6 +93,7 @@ public class SignUpActivity extends AppCompatActivity {
                                     Intent intentToMain = new Intent(SignUpActivity.this, MainActivity.class);
                                     intentToMain.putExtra("key", message);
                                     startActivity(intentToMain);
+
                                 } else {
                                     // If sign in fails, display a message to the user.
                                     Toast.makeText(SignUpActivity.this, "Authentication failed.",
