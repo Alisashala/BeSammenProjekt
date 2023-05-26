@@ -27,12 +27,12 @@
         android:layout_height="57dp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="16dp"
-        android:fontFamily="sans-serif-light"
         android:text="Users"
+        android:fontFamily="sans-serif-light"
         android:textAlignment="center"
-        android:textColor="#000000"
-        android:textSize="30sp"
-        android:textStyle="bold" />
+        android:textColor="@color/black"
+        android:textSize="40sp"
+        android:textStyle="italic"/>
 
     <LinearLayout
         android:id="@+id/user1Layout"

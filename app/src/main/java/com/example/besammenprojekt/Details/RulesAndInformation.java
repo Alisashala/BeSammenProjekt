@@ -25,7 +25,7 @@ public class RulesAndInformation extends AppCompatActivity {
         TextView rulesTextView = findViewById(R.id.rulesTextView);
 
         // Set the detailed rules text
-        String rules = "At Love And Affection, we prioritize creating a safe and inclusive environment for all users. We believe in fostering respect and empathy within our community. Here are some key guidelines and features that ensure a positive experience for everyone:";
+        String rules = "At MindTalk, we prioritize creating a safe and inclusive environment for all users. We believe in fostering respect and empathy within our community. Here are some key guidelines and features that ensure a positive experience for everyone:";
 
         // Assigns the value of the 'rules' string to the TextView: 'rulesTextView'
         rulesTextView.setText(rules);
@@ -58,7 +58,7 @@ public class RulesAndInformation extends AppCompatActivity {
         // Set the detailed rules text
         String rules3 = "We value your feedback and input. If you have any questions, concerns, or suggestions, please don't hesitate to contact us using the provided contact information below:\n" +
                 "\n" +
-                "Email: Loveandaffection@livelovelaugh.dk";
+                "Email: Support@MindTalk.com";
 
         // Assigns the value of the 'rules3' string to the TextView: 'informationTextView'
         contactInformation.setText(rules3);

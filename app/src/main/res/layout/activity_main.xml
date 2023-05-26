@@ -6,6 +6,27 @@
     android:layout_height="match_parent"
     android:background="#F5F4F4">
 
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="76dp"
+        android:layout_height="39dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="71dp"
+        android:layout_marginTop="504dp"
+        android:text="Rules and Information" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="66dp"
+        android:layout_height="33dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="74dp"
+        android:layout_marginTop="362dp"
+        android:text="Private Chat" />
+
     <View
         android:id="@+id/viewBackground2"
         android:layout_width="match_parent"
@@ -22,8 +43,8 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="15dp"
-        android:fontFamily="sans-serif-light"
         android:text="Welcome"
+        android:fontFamily="sans-serif-light"
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="40sp"
@@ -115,5 +136,17 @@
             app:srcCompat="@drawable/user" />
 
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="65dp"
+        android:layout_height="38dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="68dp"
+        android:layout_marginTop="214dp"
+        android:layout_marginEnd="25dp"
+        android:layout_toStartOf="@+id/groupChat"
+        android:text="Group Chat" />
 
 </RelativeLayout>
