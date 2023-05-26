@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import com.example.besammenprojekt.MainActivity;
 import com.example.besammenprojekt.R;
 import com.example.besammenprojekt.Chat.ChatActivity;
 

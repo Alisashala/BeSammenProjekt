@@ -69,7 +69,7 @@ public class LoginActivityTest {
         materialButton.perform(click());
 
         ViewInteraction button = onView(
-                allOf(withId(R.id.logOut),
+                allOf(withId(R.id.signOutButton),
                 isDisplayed()));
     }
 
