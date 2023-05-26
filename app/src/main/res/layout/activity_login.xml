@@ -13,8 +13,8 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="60dp"
-        android:text="App Navn"
-        android:textColor="@color/black"
+        android:text="MindTalk"
+        android:textColor="#4D7429"
         android:textSize="24sp"
         android:textStyle="bold" />
 

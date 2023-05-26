@@ -5,6 +5,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.LayoutInflater;
@@ -19,7 +20,9 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.besammenprojekt.MainActivity;
 import com.example.besammenprojekt.R;
+import com.example.besammenprojekt.User.AgeActivity;
 import com.example.besammenprojekt.User.UserActivity;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.ChildEventListener;
@@ -49,6 +52,7 @@ public class ChatActivity extends AppCompatActivity {
 
     private ListView lv;
     private Button send;
+
     private EditText ed;
     private KonfettiView confettiView = null;
 
@@ -172,4 +176,10 @@ public class ChatActivity extends AppCompatActivity {
             confettiView.start(party);
         }
 
+    //backbutton from chatActivity til AgeActivity, tjek onclick i xml filen.
+    public void backButton(View view) {
+        Intent intentToAgeActivity = new Intent(getApplicationContext(), AgeActivity.class);
+        startActivity(intentToAgeActivity);
+        finish();
+    }
 }

@@ -24,11 +24,14 @@ public class AgeActivity extends AppCompatActivity {
         finish();
     }
 
+        public void backButton(View view) {
+            Intent intentToMainActivity = new Intent(getApplicationContext(), MainActivity.class);
+            startActivity(intentToMainActivity);
+            finish();
 
-    public void backButton(View view) {
-        Intent intentToMainActivity = new Intent(getApplicationContext(), MainActivity.class);
-        startActivity(intentToMainActivity);
-        finish();
+        }
 
     }
-}
+
+
+
