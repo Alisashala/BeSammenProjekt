@@ -1,33 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp"
     tools:context=".User.UserActivity">
 
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/backButtonInUser"
+        android:layout_width="67dp"
+        android:layout_height="71dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="2dp"
+        android:contentDescription="Back to Main Activity"
+        android:onClick="backButtonInUser"
+        android:padding="5dp"
+        android:src="@drawable/back_icon"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <!-- User 1 -->
+    <TextView
+        android:id="@+id/rulesTextView"
+        android:layout_width="197dp"
+        android:layout_height="57dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:fontFamily="sans-serif-light"
+        android:text="Users"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
     <LinearLayout
         android:id="@+id/user1Layout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginBottom="16dp">
+        android:layout_height="80dp"
+        android:layout_below="@id/rulesTextView"
+        android:layout_marginTop="32dp"
+        android:orientation="horizontal">
 
         <ImageView
             android:id="@+id/user1ImageView"
             android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:src="@drawable/user1"
-            android:layout_gravity="center_vertical"/>
+            android:layout_height="52dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="8dp"
+            android:src="@drawable/user1" />
 
         <TextView
             android:id="@+id/user1NameTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="User 1"
-            android:textSize="18sp"
-            android:layout_marginStart="16dp"/>
+            android:layout_width="250dp"
+            android:layout_height="29dp"
+            android:layout_marginStart="16dp"
+            android:text="LoveAndAffection_0"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/user1SmallTextView"
+            android:layout_width="85dp"
+            android:layout_height="35dp"
+            android:layout_gravity="center_horizontal"
+            android:text="Online"
+            android:textAlignment="center"
+            android:textColor="#4CAF50"
+            android:textSize="14sp" />
 
     </LinearLayout>
 
@@ -35,50 +74,77 @@
     <LinearLayout
         android:id="@+id/user2Layout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_below="@id/user1Layout">
+        android:layout_below="@id/user1Layout"
+        android:layout_marginTop="16dp"
+        android:layout_height="80dp"
+        android:layout_marginLeft="8dp"
+        android:orientation="horizontal">
 
         <ImageView
             android:id="@+id/user2ImageView"
             android:layout_width="48dp"
             android:layout_height="48dp"
-            android:src="@drawable/user2"
-            android:layout_gravity="center_vertical"/>
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/user2" />
 
         <TextView
             android:id="@+id/user2NameTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="User 2"
-            android:textSize="18sp"
-            android:layout_marginStart="16dp"/>
+            android:layout_width="250dp"
+            android:layout_height="29dp"
+            android:layout_marginStart="16dp"
+            android:text="anonym_63"
+            android:textSize="18sp"  />
+
+        <TextView
+            android:id="@+id/user2SmallTextView"
+            android:layout_width="85dp"
+            android:layout_height="35dp"
+            android:layout_gravity="center_horizontal"
+            android:text="Offline"
+            android:textAlignment="center"
+            android:textColor="#FD0000"
+            android:textSize="14sp" />
+
+
 
     </LinearLayout>
-
 
     <!-- User 3 -->
     <LinearLayout
         android:id="@+id/user3Layout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_below="@id/user2Layout">
+        android:layout_below="@id/user2Layout"
+        android:layout_marginTop="16dp"
+        android:layout_height="80dp"
+        android:layout_marginLeft="8dp"
+        android:orientation="horizontal">
 
         <ImageView
             android:id="@+id/user3ImageView"
             android:layout_width="48dp"
             android:layout_height="48dp"
-            android:src="@drawable/user3"
-            android:layout_gravity="center_vertical"/>
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/user3" />
 
         <TextView
             android:id="@+id/user3NameTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="User 3"
-            android:textSize="18sp"
-            android:layout_marginStart="16dp"/>
+            android:layout_width="250dp"
+            android:layout_height="29dp"
+            android:layout_marginStart="16dp"
+            android:text="Businessman007"
+            android:textSize="18sp"  />
+
+        <TextView
+            android:id="@+id/user3SmallTextView"
+            android:layout_width="85dp"
+            android:layout_height="35dp"
+            android:layout_gravity="center_horizontal"
+            android:text="Offline"
+            android:textAlignment="center"
+            android:textColor="#FD0000"
+            android:textSize="14sp" />
+
+
 
     </LinearLayout>
 
@@ -86,27 +152,92 @@
     <LinearLayout
         android:id="@+id/user4Layout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_below="@id/user3Layout">
+        android:layout_below="@id/user3Layout"
+        android:layout_marginTop="16dp"
+        android:layout_height="80dp"
+        android:layout_marginLeft="8dp"
+
+        android:orientation="horizontal">
 
         <ImageView
             android:id="@+id/user4ImageView"
             android:layout_width="48dp"
             android:layout_height="48dp"
-            android:src="@drawable/user4"
-            android:layout_gravity="center_vertical"/>
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/user4" />
 
         <TextView
             android:id="@+id/user4NameTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="User 3"
-            android:textSize="18sp"
-            android:layout_marginStart="16dp"/>
+            android:layout_width="250dp"
+            android:layout_height="29dp"
+            android:layout_marginStart="16dp"
+            android:text="MikeTheMan12"
+            android:textSize="18sp"  />
+
+        <TextView
+            android:id="@+id/user4SmallTextView"
+            android:layout_width="85dp"
+            android:layout_height="35dp"
+            android:layout_gravity="center_horizontal"
+            android:text="Online"
+            android:textAlignment="center"
+            android:textColor="#4CAF50"
+            android:textSize="14sp" />
 
     </LinearLayout>
 
+    <!-- User 5 -->
+    <LinearLayout
+        android:id="@+id/user5Layout"
+        android:layout_width="match_parent"
+        android:layout_below="@id/user4Layout"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+        android:layout_height="80dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="8dp"
 
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/user5ImageView"
+            android:layout_width="48dp"
+            android:layout_height="67dp"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/user5" />
+
+        <TextView
+            android:layout_width="250dp"
+            android:layout_height="29dp"
+            android:layout_marginStart="16dp"
+            android:text="Laura029"
+            android:textSize="18sp"  />
+
+        <TextView
+            android:id="@+id/user5SmallTextView"
+            android:layout_width="85dp"
+            android:layout_height="35dp"
+            android:layout_gravity="center_horizontal"
+            android:text="Online"
+            android:textAlignment="center"
+            android:textColor="#4CAF50"
+            android:textSize="14sp" />
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="61dp"
+        android:layout_height="105dp"
+        android:layout_below="@+id/user5Layout"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="176dp"
+        android:layout_marginTop="62dp"
+        android:layout_marginEnd="174dp"
+        android:layout_marginBottom="52dp"
+        app:srcCompat="@drawable/add_user__1_" />
 
 </RelativeLayout>
