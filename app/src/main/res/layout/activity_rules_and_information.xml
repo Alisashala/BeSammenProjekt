@@ -25,14 +25,15 @@
         android:layout_height="95dp"
         android:layout_marginTop="16dp"
         android:text="Rules and Information"
-        android:textAlignment="center"
-        android:textColor="@color/black"
-        android:textSize="40sp"
-        android:textStyle="italic"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.168"
         app:layout_constraintStart_toEndOf="@+id/backButtonInRules"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:fontFamily="sans-serif-light"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="40sp"
+        android:textStyle="italic"/>
 
     <TextView
         android:id="@+id/rulesAndPrinciples"
@@ -41,7 +42,8 @@
         android:layout_marginTop="32dp"
         android:fontFamily="sans-serif-light"
         android:text="Rules and principles"
-        android:textColor="#000000"
+        android:textColor="#BF0B0B"
+        android:textColorHighlight="#BF0B0B"
         android:textSize="20sp"
         android:textStyle="italic"
         app:layout_constraintEnd_toEndOf="parent"
@@ -51,8 +53,8 @@
 
     <TextView
         android:id="@+id/rulesTextView"
-        android:layout_width="324dp"
-        android:layout_height="113dp"
+        android:layout_width="328dp"
+        android:layout_height="134dp"
         android:layout_marginTop="16dp"
         android:fontFamily="sans-serif-light"
         android:textColor="#000000"
@@ -83,7 +85,7 @@
         android:layout_marginTop="44dp"
         android:fontFamily="sans-serif-light"
         android:text="Contact information"
-        android:textColor="#000000"
+        android:textColor="#4CAF50"
         android:textSize="20sp"
         android:textStyle="italic"
         app:layout_constraintEnd_toEndOf="parent"
@@ -93,8 +95,8 @@
 
     <TextView
         android:id="@+id/informationTextView"
-        android:layout_width="341dp"
-        android:layout_height="111dp"
+        android:layout_width="328dp"
+        android:layout_height="134dp"
         android:layout_marginTop="16dp"
         android:fontFamily="sans-serif-light"
         android:textColor="#000000"
