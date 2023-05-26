@@ -4,7 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:name=".SignUpActivity" >
+    android:name=".SignUpActivity"
+    android:layout_gravity="center"
+    android:padding="5dp">
 
     <TextView
         android:id="@+id/tv_app_name"
@@ -29,7 +31,8 @@
         android:layout_marginLeft="30dp"
         android:background="@drawable/login_colors"
         android:layout_marginTop="175dp"
-        android:layout_marginRight="30dp"/>
+        android:layout_marginRight="30dp"
+        android:layout_marginBottom="2dp"/>
 
 
     <EditText
@@ -39,7 +42,7 @@
         android:layout_below="@+id/et_email"
         android:layout_centerHorizontal="true"
         android:layout_marginLeft="30dp"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="2dp"
         android:layout_marginRight="30dp"
         android:background="@drawable/login_colors"
         android:hint="Password"
@@ -53,13 +56,13 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/et_email"
         android:layout_marginLeft="30dp"
-        android:layout_marginTop="57dp"
+        android:layout_marginTop="60dp"
         android:layout_marginRight="30dp"
         android:background="@drawable/login_colors"
-        android:hint="Name"
-        android:inputType="textPersonName"
+        android:hint="Username"
         android:padding="15dp"
-        android:paddingStart="25dp" />
+        android:paddingStart="25dp"
+        android:layout_marginBottom="2dp"/>
 
     <ProgressBar
         android:id="@+id/progressBar"
@@ -71,9 +74,10 @@
         android:id="@+id/btn_signup"
         android:layout_width="match_parent"
         android:layout_height="55dp"
-        android:layout_centerInParent="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
         android:layout_marginLeft="30dp"
-        android:layout_marginTop="34dp"
+        android:layout_marginTop="377dp"
         android:layout_marginRight="30dp"
         android:backgroundTint="#566A39"
         android:onClick="SignUp"
