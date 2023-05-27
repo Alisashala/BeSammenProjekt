@@ -52,8 +52,8 @@
 
     <TextView
         android:id="@+id/userInfo"
-        android:layout_width="153dp"
-        android:layout_height="53dp"
+        android:layout_width="282dp"
+        android:layout_height="57dp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="80dp"
         android:text="User"
