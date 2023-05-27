@@ -19,16 +19,18 @@ public class AgeActivity extends AppCompatActivity {
     }
 
     public void firstChat (View v) {
+
+        // Opretter en intent til at navigere fra AgeActivity til ChatActivity
         Intent intentToFirstChat = new Intent(AgeActivity.this, ChatActivity.class);
         startActivity(intentToFirstChat);
         finish();
     }
 
         public void backButton(View view) {
+            // Oprettter en intent til at navigere tilbage til MainActivity
             Intent intentToMainActivity = new Intent(getApplicationContext(), MainActivity.class);
             startActivity(intentToMainActivity);
             finish();
-
         }
 
     }

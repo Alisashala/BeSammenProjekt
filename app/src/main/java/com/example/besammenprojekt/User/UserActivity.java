@@ -26,18 +26,18 @@ public class UserActivity extends AppCompatActivity {
         setContentView(R.layout.activity_user);
 
     }
-        // onClick event
-        // Handles the onClick event for the back button in the RulesAndInformation activity.
-        // Navigates back to the MainActivity.
-
-        // parameter view -->  The view that triggers the event
+// onClick event
+        // parameter view -->  det view der udløser begivenheden/eventet
         public void backButtonInUser(View view) {
-            // Create an intent to navigate back to the MainActivity
-            // // The current view's context is used as the first argument for the Intent constructor
+           // Intent --> oprettelse af intent for at navigere tilbage til MainActivity
+            // view.getContext() --> nuværende views kontekst bruges som det første argument til
+            // Intent-konstruktøren
             Intent intentToMainActivity = new Intent(view.getContext(), MainActivity.class);
-            // Start the activity specified by the intent
+
+            // Intenten startes ved hjælp af metoden startActivity()
             startActivity(intentToMainActivity);
-            // Finish the current activity, removing it from the activity stack
+
+            // Afslutter den nuværende aktivitet og fjerner den fra aktivitetsstakken
             finish();
         }
     }

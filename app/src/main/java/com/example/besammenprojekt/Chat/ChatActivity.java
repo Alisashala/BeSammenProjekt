@@ -30,6 +30,7 @@ import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.ktx.Firebase;
 
 import org.w3c.dom.Text;
 
@@ -51,75 +52,39 @@ import nl.dionsegijn.konfetti.xml.KonfettiView;
 
 public class ChatActivity extends AppCompatActivity {
 
+// Disse variabler repræsenterer forskellige elementer i brugergrænsefladen, autentifikation
+// og håndtering af animationer.
+
+    // User interface elementer / brugerfladeelementer
     private ListView lv;
     private Button send;
-    private EditText ed;
-    private KonfettiView confettiView = null;
-    private Party party = null;
     private ProgressBar progressBar;
-    private Handler handler;
-    private Runnable runnable;
+
+
+    // Grafik og animation
+    private Party party;
+
+    // Handler og Runnable
+    private Handler handler; // Handler til udførelse af forsinkede handlinger
+    private Runnable runnable; // Runnable til definerende opgaver, der skal udføres
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chat);
-        send = findViewById(R.id.sendButton);
-        FirebaseDatabase db = FirebaseDatabase.getInstance();
-        ArrayList al = new ArrayList();
-        lv = findViewById(R.id.lv);
-        ed = findViewById(R.id.inputMessage);
-        confettiView = findViewById(R.id.confettiView);
-        progressBar = findViewById(R.id.progressBar);
-
-        // Initialize the Handler
-        handler = new Handler();
-        // Create a Runnable to hide the progress bar
-        runnable = new Runnable() {
-            @Override
-            public void run() {
-                progressBar.setVisibility(View.GONE);
-            }
-        };
 
 
-        // Show the progress bar
-        progressBar.setVisibility(View.VISIBLE);
-        // Schedule the runnable to hide the progress bar after 7 seconds
-        handler.postDelayed(runnable, 1000);
 
 
-        db.getReference("Messages").addChildEventListener(new ChildEventListener() {
-
-            String lastMessage = "";
-            @Override
-            public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
-                // Update the last message with the new message
-                lastMessage = snapshot.getValue().toString();
-
-                // Show a toast only for the last message
-                if (previousChildName == null) {
-                    // This is the first message, show the toast
-                    Toast.makeText(ChatActivity.this, "New Message: " + lastMessage, Toast.LENGTH_SHORT).show();
-                }
-
-                al.add(0, snapshot.getValue().toString()); // Add messages at the beginning of the list
-                Collections.sort(al);
-                ArrayAdapter<String> adapter = new ArrayAdapter<String>(ChatActivity.this, android.R.layout.simple_list_item_1, al) {
                     @NonNull
                     @Override
+                    // getView()-metoden opretter og tilpasser visningen for hvert element i ListView.
+                    // Den kalder først super.getView(position, convertView, parent) for at få standardvisningen.
+                    // Derefter tilpasses visningen baseret på elementets position.
                     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
                         View view = super.getView(position, convertView, parent);
 
-                        TextView textView = view.findViewById(android.R.id.text1);
-
-                        if (position % 3 == 2 || position % 2 == 2)  {
-                            // Apply custom background to every second TextView
-                            view.setBackgroundResource(R.drawable.background_sent_message);
-
-                        } else {
-                            // Reset the background for other TextViews
                             view.setBackgroundResource(R.drawable.background_recieved_message);
                         }
 
@@ -127,9 +92,10 @@ public class ChatActivity extends AppCompatActivity {
                         return view;
                     }
                 };
-
+                // Tilføjer adapteren til ListView
                 lv.setAdapter(adapter);
             }
+
 
             @Override
             public void onChildChanged(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
@@ -151,31 +117,48 @@ public class ChatActivity extends AppCompatActivity {
 
             }
         });
+
+// onClick til sendknappen
+        //Sætter en OnClickListener til knappen send og definerer dens onClick-metode
         send.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                // Opretter en instans af FirebaseAuth ved at kalde FirebaseAuth.getInstance().
+                // Dette giver adgang til Firebase Authentication-funktionaliteterne.
                 FirebaseAuth a = FirebaseAuth.getInstance();
+
+                // Her oprettes en instans af Date ved at kalde Calendar.getInstance().getTime().
+                // Dette bruges til at få den aktuelle dato og tidspunkt.
                 Date getdate = Calendar.getInstance().getTime();
+
+                // Gemmer indtastet tekst i Firebase Realtime Database under "Messages" med en unik
+                // nøgle bestående af brugerens UID og det aktuelle dato og tidspunkt.
                 db.getReference("Messages").child(a.getUid()+getdate).setValue(ed.getText().toString());
             }
         });
-    }
 
-    public void showConfetti(View view) {
             EmitterConfig emitterConfig = new Emitter(350, TimeUnit.MILLISECONDS).perSecond(1000);
+
+            //Opretter en konfetti-parti ved hjælp af en PartyFactory med den konfigurerede emitter.
+            // Der er yderligere indstillinger som spredning, farver og hastighedsinterval.
             party = new PartyFactory(emitterConfig)
+                    // konfetti farver, spread, position osv.
                     .spread(700)
                     .colors(Arrays.asList(0xff3660, 0x4D7429, 0xB18F6A, 0x1790d0, 0xffffba, 0xbaffc9))
                     .setSpeedBetween(0f, 30f)
                     .position(new Position.Relative(0.5, 0.3))
+                    // Bygger og returnerer et færdigt party-objekt baseret på de tidligere indstillinger.
                     .build();
 
+            // Starter konfettianimationen ved at give party-objektet til confettiView til visning
+        // af konfetti.
             confettiView.start(party);
         }
 
-    //backbutton from chatActivity til AgeActivity, tjek onclick i xml filen.
+// Backbutton from chatActivity til AgeActivity
+
     public void backButton(View view) {
-        Intent intentToAgeActivity = new Intent(ChatActivity.this, AgeActivity.class);
+
         startActivity(intentToAgeActivity);
         finish();
     }
