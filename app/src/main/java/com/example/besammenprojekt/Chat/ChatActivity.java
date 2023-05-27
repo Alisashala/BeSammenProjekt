@@ -20,6 +20,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.besammenprojekt.Details.RulesAndInformation;
 import com.example.besammenprojekt.MainActivity;
 import com.example.besammenprojekt.R;
 import com.example.besammenprojekt.User.AgeActivity;
@@ -57,10 +58,6 @@ public class ChatActivity extends AppCompatActivity {
     // User interface elementer / brugerfladeelementer
     private ListView lv;
     private Button send;
-
-
-    private EditText ed;
-    private KonfettiView confettiView;
     private ProgressBar progressBar;
 
 
@@ -79,9 +76,6 @@ public class ChatActivity extends AppCompatActivity {
 
 
 
-        // Denne linje opretter en ChildEventListener, der lytter efter ændringer i child elememter
-        // under "Messages" i databasen.
-        db.getReference("Messages").addChildEventListener(new ChildEventListener() {
 
                     @NonNull
                     @Override
@@ -165,9 +159,14 @@ public class ChatActivity extends AppCompatActivity {
 
     public void backButton(View view) {
 
-        // intent --> oprettelse af intent for at navigere tilbage til AgeActivity
-        Intent intentToAgeActivity = new Intent(getApplicationContext(), AgeActivity.class);
         startActivity(intentToAgeActivity);
         finish();
     }
+
+    public void infoChatButton (View view) {
+        Intent intentToRulesAndIndformation = new Intent(ChatActivity.this, RulesAndInformation.class);
+        startActivity(intentToRulesAndIndformation);
+        finish();
+    }
+
 }

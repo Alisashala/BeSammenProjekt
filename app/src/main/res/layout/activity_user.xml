@@ -4,18 +4,18 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".User.UserActivity">
+    tools:context=".User.UserActivity"
+    android:background="#F5F4F4">
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/backButtonInUser"
-        android:layout_width="67dp"
-        android:layout_height="71dp"
-        android:layout_alignParentTop="true"
+        android:layout_width="40dp"
+        android:layout_height="50dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="2dp"
-        android:contentDescription="Back to Main Activity"
-        android:onClick="backButtonInUser"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="10dp"
         android:padding="5dp"
+        android:onClick="backButtonInUser"
         android:src="@drawable/back_icon"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

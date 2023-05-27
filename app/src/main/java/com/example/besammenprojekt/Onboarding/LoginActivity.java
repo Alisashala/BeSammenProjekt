@@ -134,8 +134,6 @@ public class LoginActivity extends AppCompatActivity {
                                 if (task.isSuccessful()) {
                                     Toast.makeText(getApplicationContext(), "Login successful", Toast.LENGTH_SHORT).show();
 
-                                    // Opretter en Intent til at starte MainActivity.
-                                    // getApplicationContext() bruges som konteksten for Intent'en.
                                     Intent intentToMain = new Intent(getApplicationContext(), MainActivity.class);
                                     startActivity(intentToMain);
                                     finish();
@@ -143,11 +141,6 @@ public class LoginActivity extends AppCompatActivity {
 
                                 } else {
 
-                                    // Logger eventuelle fejl, der opstår under login-processen.
-                                    Log.w(TAG, "signInWithEmail:failure", task.getException());
-
-                                    // - Hvis log ind-processen mislykkes, vises en kort besked om,
-                                    // at godkendelsen mislykkedes ved hjælp af Toast.
                                     Toast.makeText(LoginActivity.this, "Authentication failed.",
                                             Toast.LENGTH_SHORT).show();
 
