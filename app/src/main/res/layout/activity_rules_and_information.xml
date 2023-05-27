@@ -5,7 +5,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Details.RulesAndInformation">
+    tools:context=".Details.RulesAndInformation"
+    android:background="#F5F4F4">
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/backButtonInRules"

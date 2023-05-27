@@ -21,7 +21,6 @@ public class MainActivity extends AppCompatActivity {
     private TextView textView;
     private FirebaseUser user;
     private Button logOut;
-
     private ImageView groupChat;
     private ImageView privateChat;
 

@@ -20,6 +20,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.besammenprojekt.Details.RulesAndInformation;
 import com.example.besammenprojekt.MainActivity;
 import com.example.besammenprojekt.R;
 import com.example.besammenprojekt.User.AgeActivity;
@@ -52,11 +53,8 @@ public class ChatActivity extends AppCompatActivity {
 
     private ListView lv;
     private Button send;
-
     private EditText ed;
     private KonfettiView confettiView = null;
-
-    private Shape.DrawableShape drawableShape = null;
     private Party party = null;
     private ProgressBar progressBar;
     private Handler handler;
@@ -77,7 +75,6 @@ public class ChatActivity extends AppCompatActivity {
 
         // Initialize the Handler
         handler = new Handler();
-
         // Create a Runnable to hide the progress bar
         runnable = new Runnable() {
             @Override
@@ -85,6 +82,8 @@ public class ChatActivity extends AppCompatActivity {
                 progressBar.setVisibility(View.GONE);
             }
         };
+
+
         // Show the progress bar
         progressBar.setVisibility(View.VISIBLE);
         // Schedule the runnable to hide the progress bar after 7 seconds
@@ -106,10 +105,8 @@ public class ChatActivity extends AppCompatActivity {
                 }
 
                 al.add(0, snapshot.getValue().toString()); // Add messages at the beginning of the list
-
                 Collections.sort(al);
                 ArrayAdapter<String> adapter = new ArrayAdapter<String>(ChatActivity.this, android.R.layout.simple_list_item_1, al) {
-
                     @NonNull
                     @Override
                     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
@@ -178,8 +175,15 @@ public class ChatActivity extends AppCompatActivity {
 
     //backbutton from chatActivity til AgeActivity, tjek onclick i xml filen.
     public void backButton(View view) {
-        Intent intentToAgeActivity = new Intent(getApplicationContext(), AgeActivity.class);
+        Intent intentToAgeActivity = new Intent(ChatActivity.this, AgeActivity.class);
         startActivity(intentToAgeActivity);
         finish();
     }
+
+    public void infoChatButton (View view) {
+        Intent intentToRulesAndIndformation = new Intent(ChatActivity.this, RulesAndInformation.class);
+        startActivity(intentToRulesAndIndformation);
+        finish();
+    }
+
 }

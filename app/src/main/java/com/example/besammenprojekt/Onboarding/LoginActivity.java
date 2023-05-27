@@ -100,7 +100,6 @@ public class LoginActivity extends AppCompatActivity {
                                 progressBar.setVisibility(View.GONE);
                                 if (task.isSuccessful()) {
                                     Toast.makeText(getApplicationContext(), "Login successful", Toast.LENGTH_SHORT).show();
-
                                     Intent intentToMain = new Intent(getApplicationContext(), MainActivity.class);
                                     startActivity(intentToMain);
                                     finish();
@@ -108,7 +107,7 @@ public class LoginActivity extends AppCompatActivity {
 
                                 } else {
                                     // If sign in fails, display a message to the user.
-                                    Log.w(TAG, "signInWithEmail:failure", task.getException());
+                                    Log.w(TAG, "signInWithEmail: failed", task.getException());
                                     Toast.makeText(LoginActivity.this, "Authentication failed.",
                                             Toast.LENGTH_SHORT).show();
 
