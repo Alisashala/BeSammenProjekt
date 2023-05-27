@@ -126,8 +126,8 @@ public class ChatActivity extends AppCompatActivity {
                     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
                         View view = super.getView(position, convertView, parent);
 
-                        // Skifter baggrundsfarven for hver tredje og fjerde besked
-                        if(position %3 == 1 || position %4 == 2) {
+                        // Skifter baggrundsfarven for hver tredje besked
+                        if(position %3 == 1) {
                             // Inflater XML-layoutfilen med den ønskede TextView
                             LayoutInflater inflater = LayoutInflater.from(getContext());
                             View layout = inflater.inflate(R.layout.activity_chat, parent, false);
