@@ -101,7 +101,7 @@ public class LoginActivityTest {
 
 // Test af logud knap
         ViewInteraction button = onView(
-                allOf(withId(R.id.logOut),
+                allOf(withId(R.id.signOutButton),
                 isDisplayed()));
     }
 
