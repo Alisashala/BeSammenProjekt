@@ -3,6 +3,11 @@
 Vi har lavet et Continuous Integration flow, som sikrer at issue/task branches kan accepteres merged ind til default branchen. Hver gang vi skal kode noget nyt, har vi inde på Github lavet et nyt issue, og givet det en ny branch til hvert problem/task der kan opstå. Ligeledes har vi arbejdet på hver vores issue branch, derefter har vi pushet og merged det til vores master branch. 
 Som der kan ses inde i vores projekt har vi mere end 15 branches og vi tæller stadig 😂
 
+<details>
+ 
+ <img width="717" alt="Skærmbillede 2023-05-27 kl  15 10 45" src="https://github.com/Alisashala/BeSammenProjekt/assets/111958229/991db865-3110-42c9-a525-a2e1fb7d431a"> 
+</details>
+
 ### Projects - To-do board 📝
 <details>
  
