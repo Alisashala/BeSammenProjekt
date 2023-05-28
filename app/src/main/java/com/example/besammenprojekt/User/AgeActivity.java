@@ -18,6 +18,8 @@ public class AgeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_age);
     }
 
+// Alisa
+
     public void firstChat (View v) {
 
         // Opretter en intent til at navigere fra AgeActivity til ChatActivity
@@ -25,6 +27,8 @@ public class AgeActivity extends AppCompatActivity {
         startActivity(intentToFirstChat);
         finish();
     }
+
+// Rajana
 
         public void backButton(View view) {
             // Oprettter en intent til at navigere tilbage til MainActivity

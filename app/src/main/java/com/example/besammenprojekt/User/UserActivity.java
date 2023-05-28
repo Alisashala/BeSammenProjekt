@@ -18,6 +18,8 @@ import com.example.besammenprojekt.R;
 import java.util.ArrayList;
 import java.util.List;
 
+// Rajana
+
 public class UserActivity extends AppCompatActivity {
 
     @Override
@@ -26,7 +28,6 @@ public class UserActivity extends AppCompatActivity {
         setContentView(R.layout.activity_user);
 
     }
-// onClick event
         // parameter view -->  det view der udløser begivenheden/eventet
         public void backButtonInUser(View view) {
            // Intent --> oprettelse af intent for at navigere tilbage til MainActivity

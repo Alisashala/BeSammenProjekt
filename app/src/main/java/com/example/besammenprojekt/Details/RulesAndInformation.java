@@ -11,10 +11,12 @@ import com.example.besammenprojekt.MainActivity;
 import com.example.besammenprojekt.R;
 
 import org.w3c.dom.Text;
-//AppCompatActivity-klassen er en del af Android Support-biblioteket.
-//extends --> klassen udvider eller arver funktionaliteten fra en anden klasse.
-//Det betyder, at RulesAndInformation vil arve alle de ikke-private egenskaber,
-// metoder og andre medlemmer fra AppCompatActivity.
+    //AppCompatActivity-klassen er en del af Android Support-biblioteket.
+    //extends --> klassen udvider eller arver funktionaliteten fra en anden klasse.
+    //Det betyder, at RulesAndInformation vil arve alle de ikke-private egenskaber,
+    // metoder og andre medlemmer fra AppCompatActivity.
+
+//Rajana
 
 public class RulesAndInformation extends AppCompatActivity {
 
@@ -29,7 +31,7 @@ public class RulesAndInformation extends AppCompatActivity {
         // activity_rules_and_information.
 
 
-// String rule 1
+    // String rule 1
         // Reference til TextView'en med id'et "rulesTextView" fra layout XML-filen.
         // findViewById = en metode, der søger efter en view med det specificerede id
         // i det nuværende layout.
@@ -44,7 +46,7 @@ public class RulesAndInformation extends AppCompatActivity {
         // Tildeler værdien af strengen 'rules' til TextView'en: 'rulesTextView'
         rulesTextView.setText(rules);
 
-// String rule 2
+    // String rule 2
         // Reference til TextView'en med id'et "rulesTextView" fra layout XML-filen.
         // findViewById = en metode, der søger efter en view med det specificerede id
         // i det nuværende layout.
@@ -65,7 +67,7 @@ public class RulesAndInformation extends AppCompatActivity {
         // Tildeler værdien af strengen 'rules' til TextView'en: 'rulesTextView''
         rulesTextView2.setText(rules2);
 
-// String rule 3
+    // String rule 3
         // Reference til TextView'en med id'et "rulesTextView" fra layout XML-filen.
         // findViewById = en metode, der søger efter en view med det specificerede id
         // i det nuværende layout.
@@ -81,7 +83,7 @@ public class RulesAndInformation extends AppCompatActivity {
 
     }
 
-// onClick event
+    // onClick event
         // Håndterer onClick-event for tilbageknappen i RulesAndInformation-aktiviteten.
         // Navigerer tilbage til MainActivity.
 

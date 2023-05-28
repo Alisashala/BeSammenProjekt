@@ -23,12 +23,13 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-//AppCompatActivity-klassen er en del af Android Support-biblioteket.
-//extends --> klassen udvider eller arver funktionaliteten fra en anden klasse.
-//Det betyder, at LoginActivity vil arve alle de ikke-private egenskaber,
-// metoder og andre medlemmer fra AppCompatActivity.
+    //AppCompatActivity-klassen er en del af Android Support-biblioteket.
+    //extends --> klassen udvider eller arver funktionaliteten fra en anden klasse.
+    //Det betyder, at LoginActivity vil arve alle de ikke-private egenskaber, metoder og andre medlemmer fra AppCompatActivity.
 
 public class LoginActivity extends AppCompatActivity {
+
+// Nadine
 
     // Definerer private variabler af forskellige typer, der bruges til at håndtere
     // brugerens loginfunktion.
@@ -39,10 +40,12 @@ public class LoginActivity extends AppCompatActivity {
     private ProgressBar progressBar; //
     private TextView textView; //
 
+//Nadine
+
     @Override
     public void onStart() {
-        super.onStart();
 
+        super.onStart();
         // Tjekker om brugeren er logget ind (ikke-null) og opdaterer brugergrænsefladen (UI)
         // Der oprettes en FirebaseUser-variabel for at få adgang til den aktuelle bruger.
         FirebaseUser currentUser = mAuth.getCurrentUser();
@@ -59,6 +62,8 @@ public class LoginActivity extends AppCompatActivity {
         }
     }
 
+// Nadine
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -71,7 +76,7 @@ public class LoginActivity extends AppCompatActivity {
         progressBar = findViewById(R.id.progressBar);
         textView = findViewById(R.id.signUpNow);
 
-// textView onClick
+// Nadine
 
         // Sætter en OnClickListener på textView-objektet.
         textView.setOnClickListener(new View.OnClickListener() {
@@ -90,7 +95,7 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
-// login button onClick
+// Nadine
         loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) { //sætter View som parameter og v returnere ingen værdi

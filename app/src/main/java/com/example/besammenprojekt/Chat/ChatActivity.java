@@ -39,36 +39,32 @@ import nl.dionsegijn.konfetti.core.emitter.Emitter;
 import nl.dionsegijn.konfetti.core.emitter.EmitterConfig;
 import nl.dionsegijn.konfetti.xml.KonfettiView;
 
+
 public class ChatActivity extends AppCompatActivity {
 
-// Disse variabler repræsenterer forskellige elementer i brugergrænsefladen, autentifikation
-// og håndtering af animationer.
+// Alisa
 
+    // Disse variabler repræsenterer forskellige elementer i brugergrænsefladen, autentifikation og håndtering af animationer.
     // User interface elementer / brugerfladeelementer
     private ListView lv;
     private Button send;
-
     private EditText ed;
     private KonfettiView confettiView;
     private ProgressBar progressBar;
-
-
-    // Grafik og animation
     private Party party;
-
-    // Handler og Runnable
     private Handler handler; // Handler til udførelse af forsinkede handlinger
     private Runnable runnable; // Runnable til definerende opgaver, der skal udføres
 
+
+// Alisa
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chat);
 
-// initialisering af elementer, og tilknytning til de tilsvarende variabler
+        // initialisering af elementer, og tilknytning til de tilsvarende variabler
 
-        // User interface elementer / brugerfladeelementer --> initialisering
         send = findViewById(R.id.sendButton); // Knappen til at sende beskeder
         lv = findViewById(R.id.lv); // ListView til visning af beskeder
         ed = findViewById(R.id.inputMessage); // EditText til indtastning af beskeder
@@ -85,9 +81,9 @@ public class ChatActivity extends AppCompatActivity {
         handler = new Handler(); // Handler til udførelse af forsinkede handlinger
 
 
-// Runnable-ínstans
-        //  En ny Runnable-instans oprettes med en implementering af run()-metoden. I dette tilfælde
-        // skjuler metoden progressbaren ved at ændre dens synlighed til View.GONE.
+// Nadine
+
+        // En ny Runnable-instans oprettes med en implementering af run()-metoden. I dette tilfælde skjuler metoden progressbaren ved at ændre dens synlighed til View.GONE.
         runnable = new Runnable() {
             @Override
             public void run() {
@@ -102,9 +98,9 @@ public class ChatActivity extends AppCompatActivity {
         handler.postDelayed(runnable, 3000);
 
 
+// Alisa
 
-        // Denne linje opretter en ChildEventListener, der lytter efter ændringer i child elememter
-        // under "Messages" i databasen.
+        // Denne linje opretter en ChildEventListener, der lytter efter ændringer i child elememter under "Messages" i databasen.
         db.getReference("Messages").addChildEventListener(new ChildEventListener() {
 
             @Override
@@ -117,12 +113,10 @@ public class ChatActivity extends AppCompatActivity {
                 al.add(snapshot.getValue().toString());
 
                 // Opretter en ArrayAdapter med arraylisten og tilknytter den til ListView
-                ArrayAdapter<String> adapter = new ArrayAdapter(ChatActivity.this, android.R.layout.simple_list_item_1, al){
+                ArrayAdapter<String> adapter = new ArrayAdapter(ChatActivity.this, android.R.layout.simple_list_item_1, al) {
                     @NonNull
                     @Override
-                    // getView()-metoden opretter og tilpasser visningen for hvert element i ListView.
-                    // Den kalder først super.getView(position, convertView, parent) for at få standardvisningen.
-                    // Derefter tilpasses visningen baseret på elementets position.
+                    // getView()-metoden opretter og tilpasser visningen for hvert element i ListView. --> Derefter tilpasses visningen baseret på elementets position.
                     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
                         View view = super.getView(position, convertView, parent);
 
@@ -173,21 +167,13 @@ public class ChatActivity extends AppCompatActivity {
             }
         });
 
-// onClick til sendknappen
-        //Sætter en OnClickListener til knappen send og definerer dens onClick-metode
+// Alisa - onClick til sendknappen
+
         send.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Opretter en instans af FirebaseAuth ved at kalde FirebaseAuth.getInstance().
-                // Dette giver adgang til Firebase Authentication-funktionaliteterne.
                 FirebaseAuth a = FirebaseAuth.getInstance();
-
-                // Her oprettes en instans af Date ved at kalde Calendar.getInstance().getTime().
-                // Dette bruges til at få den aktuelle dato og tidspunkt.
                 Date getdate = Calendar.getInstance().getTime();
-
-                // Gemmer indtastet tekst i Firebase Realtime Database under "Messages" med en unik
-                // nøgle bestående af brugerens UID og det aktuelle dato og tidspunkt.
                 db.getReference("Messages").child(a.getUid()+getdate).setValue(ed.getText().toString());
             }
         });
@@ -195,7 +181,7 @@ public class ChatActivity extends AppCompatActivity {
     }
 
 
-// Konfettiknap
+//Rajana - Konfettiknap
 
 
     public void showConfetti(View view) {
@@ -215,12 +201,11 @@ public class ChatActivity extends AppCompatActivity {
                 // Bygger og returnerer et færdigt party-objekt baseret på de tidligere indstillinger.
                 .build();
 
-        // Starter konfettianimationen ved at give party-objektet til confettiView til visning
-        // af konfetti.
+        // Starter konfettianimationen ved at give party-objektet til confettiView til visning af konfetti.
         confettiView.start(party);
     }
 
-// Backbutton from chatActivity til AgeActivity
+// Alisa - intent
 
     public void backButton(View view) {
 

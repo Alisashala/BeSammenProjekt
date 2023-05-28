@@ -17,17 +17,20 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class MainActivity extends AppCompatActivity {
 
+// Rajana
+
     // Firebase-authentifikation
     private FirebaseAuth auth;  // FirebaseAuth-instans
     private FirebaseUser user; // Bruger i Firebase
 
-    // Definerer private variabler af forskellige typer
     // Brugergrænseflade-elementer / interface components
     private TextView textView;
 
     private Button logOut;
     private ImageView groupChat;
     private ImageView privateChat;
+
+// Rajana
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,11 +67,10 @@ public class MainActivity extends AppCompatActivity {
             username.setText(message);
         }
 
+// Rajana
 
-        // Finder view-elementet med id'et privateChat i layoutfilen
-        // og tilordner det til variablen privateChat
+        // Finder view-elementet med id'et privateChat i layoutfilen og tilordner det til variablen privateChat
         privateChat = findViewById(R.id.privateChat);
-
         // Sætter en OnClickListener til privateChat og definerer dens onClick-metode
         privateChat.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -80,25 +82,21 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-// GroupChat onClick
-        // - - Finder view-elementet med id'et groupChat i layoutfilen og tilordner det til
-        // variablen groupChat.
-        groupChat = findViewById(R.id.groupChat);
+// Alisa
 
-        // - Sætter en OnClickListener til groupChat og definerer dens onClick-metode.
+        // Finder view-elementet med id'et groupChat i layoutfilen og tilordner det til variablen groupChat.
+        groupChat = findViewById(R.id.groupChat);
+        // Sætter en OnClickListener til groupChat og definerer dens onClick-metode.
         groupChat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                //- Opretter en Intent til at starte AgeActivity. Konteksten fra view-elementet
-                // bruges som den første parameter i Intent-konstruktøren.
                 Intent intentToGroupChat = new Intent(view.getContext(), AgeActivity.class);
                 startActivity(intentToGroupChat);
                 finish();
             }
         });
 
-// SignoutButton onClick
+// Rajana
 
         // Finder view-elementet med id'et signOutButton i layoutfilen og tilordner det til
         // variablen signOutButton
@@ -121,12 +119,10 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-// rulesAndInformation onClick
+// Rajana
 
-        // Finder view-elementet med id'et rulesAndInformation i layoutfilen og tilordner det
-        // til variablen rulesAndInformation
+        // Finder view-elementet med id'et rulesAndInformation i layoutfilen og tilordner det til variablen rulesAndInformation
         ImageView rulesAndInformation = findViewById(R.id.rulesAndInformation);
-
         // Sætter en OnClickListener til rulesAndInformation og definerer dens onClick-metode
         rulesAndInformation.setOnClickListener(new View.OnClickListener() {
             @Override
