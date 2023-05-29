@@ -18,6 +18,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.besammenprojekt.Details.RulesAndInformation;
 import com.example.besammenprojekt.R;
 import com.example.besammenprojekt.User.AgeActivity;
 import com.google.firebase.auth.FirebaseAuth;
@@ -212,6 +213,12 @@ public class ChatActivity extends AppCompatActivity {
         // intent --> oprettelse af intent for at navigere tilbage til AgeActivity
         Intent intentToAgeActivity = new Intent(getApplicationContext(), AgeActivity.class);
         startActivity(intentToAgeActivity);
+        finish();
+    }
+
+    public void infoChatButton (View view) {
+        Intent intentToRulesAndInformation = new Intent (ChatActivity.this, RulesAndInformation.class);
+        startActivity(intentToRulesAndInformation);
         finish();
     }
 }
